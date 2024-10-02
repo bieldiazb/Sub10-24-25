@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Athlete Info</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Update Athlete Information</h1>
+    <div id="update-athlete">
+        <form id="update-form">
+            <!-- Document ID input field -->
+            <label for="athlete-id">Athlete ID:</label>
+            <input type="text" id="athlete-id" name="athlete-id" required><br><br>
+
+            <!-- Fields to update -->
+            <label for="athlete-name">New Name:</label>
+            <input type="text" id="athlete-name" name="athlete-name"><br><br>
+
+            <label for="athlete-sexe">New Sexe:</label>
+            <input type="text" id="athlete-sexe" name="athlete-sexe"><br><br>
+
+            <label for="athlete-naixament">New Naixament:</label>
+            <input type="date" id="athlete-naixament" name="athlete-naixament"><br><br>
+
+            <!-- Submit button -->
+            <button type="submit">Update Athlete</button>
+        </form>
+    </div>
+
+    <!-- Firebase and App Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+    <script type="module" src="update.js"></script>
+
+</body>
+</html>

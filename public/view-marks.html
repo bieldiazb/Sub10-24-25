@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Athlete Marks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar-brand">Marques</h1>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="view-marks.html">Marques</a></li>
+            <li><a href="calendar.html">Calendari</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    
+    <div class="selects">
+        <!-- Dropdowns for filtering -->
+        <label for="athlete-select">Selecciona atleta:</label>
+        <select id="athlete-select">
+            <option value="">Tots els atletes</option>
+            <!-- Athlete options will be populated here -->
+        </select>
+
+        <label for="event-select">Selecciona prova:</label>
+        <select id="event-select">
+            <option value="">Totes les proves</option>
+            <!-- Event options will be populated here -->
+        </select>
+
+        <button id="filter-button">Filter</button>
+    </div>
+
+    <table id="marks-table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prova</th>
+                <th>Marca</th>
+                <th>Data</th>
+                <th>Lloc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Firebase and App Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+    <script type="module" src="view-marks.js"></script> <!-- Your custom module -->
+    <footer>
+        <p>&copy; 2024 bd design. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="view-marks.html">Marques</a></li>
+                <li><a href="calendar.html">Calendari</a></li>
+                <li><a href="developer.html">Developer</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

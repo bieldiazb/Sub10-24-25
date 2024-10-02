@@ -1,0 +1,201 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Maintain column layout */
+    min-height: 100vh; /* Ensure body takes full height of the viewport */
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d; /* Navbar background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    color: white; /* Text color */
+    width: 100%; /* Full width */
+}
+
+.navbar-brand {
+    font-size: 1.5em; /* Brand text size */
+}
+
+.navbar-links {
+    list-style-type: none; /* Remove default list styles */
+    display: flex; /* Display links in a row */
+    margin-right: 1rem;
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-links a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.navbar-links a:hover {
+    color: #f0f0f0; /* Change color on hover */
+}
+
+.container {
+    width: 90%;
+    flex: 1;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background-color: #2d2d2d;
+    color: #fafafa;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    width: 100%; /* Make footer full width */
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the cards */
+}
+
+.card {
+    background-color: #df0000; /* Bootstrap primary color */
+    border-radius: 8px;
+    width: 300px; /* Increase the width of the card */
+    height: 200px; /* Increase the height of the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* Animation effect on hover */
+    font-size: 20px; /* Increase font size */
+    color: white; /* Text color */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the filter section */
+}
+
+.selects{
+width: 90%;
+margin-left: 1rem;
+margin-top: 1rem;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 10px; /* Space between the select elements */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #df0000;
+    color: white;
+    font-size: 16px;
+    width: 5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #df0000;
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table with auto margins */
+}
+
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #df0000; /* Table header background color */
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect for table rows */
+}

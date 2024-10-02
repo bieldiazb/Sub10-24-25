@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar-brand">Calendari</h1>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="view-marks.html">Marques</a></li>
+            <li><a href="calendar.html">Calendari</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    <h2>Estem a l'espera de la publicació del Calendari de competicions de Pista Coberta (Short Track)</h2>
+    <table id="events-table">
+        <thead>
+            <tr>
+                <th>Prova</th>
+                <th>Data</th>
+                <th>Lloc</th> <!-- New Location column -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Event data will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Firebase and App Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+    <script type="module" src="calendar.js"></script> <!-- Your custom module -->
+    <footer>
+        <p>&copy; 2024 bd design. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="view-marks.html">Marques</a></li>
+                <li><a href="calendar.html">Calendari</a></li>
+                <li><a href="developer.html">Developer</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

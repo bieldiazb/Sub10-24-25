@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Athlete</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Add New Athlete</h1>
+    <form id="add-athlete-form">
+        <label for="athlete-name">Name:</label>
+        <input type="text" id="athlete-name" name="athlete-name" required><br><br>
+
+        <label for="athlete-sexe">Sexe:</label>
+        <input type="text" id="athlete-sexe" name="athlete-sexe" required><br><br>
+
+        <label for="athlete-naixament">Naixament:</label>
+        <input type="date" id="athlete-naixament" name="athlete-naixament" required><br><br>
+
+        <button type="submit">Add Athlete</button>
+    </form>
+
+    <!-- Firebase and App Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+    <script type="module" src="add-athlete.js"></script> <!-- Your custom module -->
+</body>
+</html>

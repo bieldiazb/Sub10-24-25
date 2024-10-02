@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Login Page</h1>
+    <div>
+        <p>Please enter your credentials to access the developer page.</p>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="login-button">Login</button>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC09cNolrDC5frhfXep9iiwq8lf-Y4mCYY",
+            authDomain: "sub10-ecc96.firebaseapp.com",
+            projectId: "sub10-ecc96",
+            storageBucket: "sub10-ecc96.appspot.com",
+            messagingSenderId: "281812157491",
+            appId: "1:281812157491:web:aa4e61897199eeedebcf46",
+            measurementId: "G-EGHZBHFRHY"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('login-button').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    window.location.href = "developer.html"; // Redirect to developer page
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Error during login:", errorCode, errorMessage);
+                    alert("Login failed. Please check your credentials.");
+                });
+        });
+    </script>
+</body>
+</html>

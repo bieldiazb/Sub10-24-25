@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Developer Page</h1>
+    <div>
+        <p>This page is for developer access only.</p>
+        <!-- Developer content goes here -->
+         <a href="add-athlete.html">Afegir atleta</a>
+         <a href="update.html">Modificar atlteta</a>
+         <a href="add-mark.html">Afegir marca</a>
+         <a href="create-event.html">Afegir event</a>
+    </div>
+    
+    <button id="logout-button">Logout</button> <!-- Logout button -->
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC09cNolrDC5frhfXep9iiwq8lf-Y4mCYY",
+            authDomain: "sub10-ecc96.firebaseapp.com",
+            projectId: "sub10-ecc96",
+            storageBucket: "sub10-ecc96.appspot.com",
+            messagingSenderId: "281812157491",
+            appId: "1:281812157491:web:aa4e61897199eeedebcf46",
+            measurementId: "G-EGHZBHFRHY"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                console.log("User is not logged in, redirecting to login page.");
+                window.location.href = "login.html";
+            } else {
+                console.log("User is logged in:", user.email); // Log user email for debugging
+            }
+        });
+
+        // Logout function
+        document.getElementById('logout-button').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                console.log("User signed out.");
+                window.location.href = "login.html"; // Redirect to login page after logging out
+            }).catch((error) => {
+                console.error("Error signing out:", error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Font for the body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f9f9f9; /* Light gray background color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure body covers full viewport height */
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d; /* Navbar background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    color: white; /* Text color */
+    width: 100%;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns to the top */
+    z-index: 1000; /* Ensures the navbar is above other content */
+}
+
+.navbar-brand {
+    font-size: 1.5em; /* Brand text size */
+}
+
+.navbar-links {
+    list-style-type: none; /* Remove default list styles */
+    display: flex; /* Display links in a row */
+    margin-right: 1rem;
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-links a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.navbar-links a:hover {
+    color: #f0f0f0; /* Change color on hover */
+}
+
+/* Table Styles */
+#events-table {
+    width: 80%; /* Set the table width */
+    margin: 100px auto; /* Center the table and add top margin for the fixed navbar */
+    border-collapse: collapse; /* Collapse table borders */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to the table */
+}
+
+thead {
+    background-color: #007BFF; /* Header background color */
+    color: white; /* Header text color */
+}
+
+th, td {
+    padding: 12px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Add border at the bottom */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+tbody tr:hover {
+    background-color: #e6f7ff; /* Light blue on row hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    width: 100%; /* Make footer full width */
+    position: relative; /* Footer positioning */
+}
