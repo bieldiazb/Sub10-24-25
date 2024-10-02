@@ -15,6 +15,7 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -23,6 +24,8 @@ body {
     padding: 10px 20px; /* Padding around the navbar */
     color: white; /* Text color */
     width: 100%; /* Full width */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
 }
 
 .navbar-brand {
@@ -50,6 +53,7 @@ body {
     color: #f0f0f0; /* Change color on hover */
 }
 
+/* Main Container */
 .container {
     width: 90%;
     flex: 1;
@@ -59,6 +63,7 @@ body {
     border-radius: 8px;
 }
 
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -72,14 +77,15 @@ th, td {
 }
 
 th {
-    background-color: #f8f9fa;
-    color: #495057;
+    background-color: #df0000; /* Table header background color */
+    color: white; /* Text color for header */
 }
 
 tbody tr:hover {
     background-color: #f1f1f1;
 }
 
+/* Footer Styles */
 footer {
     background-color: #2d2d2d;
     color: #fafafa;
@@ -102,6 +108,7 @@ footer a:hover {
     text-decoration: none; /* Remove underline on hover */
 }
 
+/* Card Styles */
 .container {
     display: flex;
     justify-content: center;
@@ -111,14 +118,14 @@ footer a:hover {
 .card {
     background-color: #df0000; /* Bootstrap primary color */
     border-radius: 8px;
-    width: 300px; /* Increase the width of the card */
-    height: 200px; /* Increase the height of the card */
+    width: 250px; /* Set card width to a smaller size */
+    height: 150px; /* Set card height to a smaller size */
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s; /* Animation effect on hover */
-    font-size: 20px; /* Increase font size */
+    font-size: 18px; /* Decrease font size */
     color: white; /* Text color */
 }
 
@@ -134,7 +141,7 @@ footer a:hover {
     text-align: center;
 }
 
-
+/* Filter Section Styles */
 .filter-section {
     display: flex;
     justify-content: space-between;
@@ -142,10 +149,10 @@ footer a:hover {
     margin-bottom: 20px; /* Space below the filter section */
 }
 
-.selects{
-width: 90%;
-margin-left: 1rem;
-margin-top: 1rem;
+.selects {
+    width: 90%;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 label {
@@ -175,27 +182,89 @@ button {
 }
 
 button:hover {
-    background-color: #df0000;
+    background-color: #df0000; /* Change background color on hover */
 }
 
-table {
-    width: 95%;
-    border-collapse: collapse;
-    margin: 20px auto; /* Center the table with auto margins */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically on mobile */
+        align-items: center; /* Center align navbar items */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Reduce h1 size for mobile */
+        text-align: center; /* Center align h1 */
+    }
+
+    .navbar {
+        margin-top: 10px; /* Add margin to space navbar from h1 */
+    }
+
+    .navbar-links {
+        flex-direction: row; /* Keep links in a row */
+        justify-content: center; /* Center align navbar links */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Prevent scrolling for links */
+        white-space: nowrap; /* Prevent line breaks */
+    }
+
+    .navbar-links a {
+        font-size: 14px; /* Decrease font size */
+        font-weight: normal; /* Remove bold font weight */
+        padding: 5px 10px; /* Reduce padding for links */
+    }
+
+    .navbar-links li {
+        margin-left: 5px; /* Decrease space between links */
+    }
+
+    .container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center cards */
+    }
+
+    .card {
+        width: 90%; /* Make cards wider on mobile */
+        height: 200px; /* Set a reasonable height for mobile */
+        font-size: 20px; /* Increase font size */
+    }
+
+    .filter-section {
+        flex-direction: column; /* Stack filter elements vertically */
+    }
+
+    .selects {
+        width: 100%; /* Full width for selects */
+        margin-left: 0; /* Reset margin */
+    }
+
+    /* Calendar Styles */
+    .calendar {
+        font-size: 14px; /* Adjust calendar font size for mobile */
+    }
 }
 
+@media (max-width: 480px) {
+    .navbar-links a {
+        font-size: 12px; /* Further reduce font size */
+        padding: 5px; /* Minimize padding */
+    }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
+    .navbar-links li {
+        margin-left: 2px; /* Minimal space between links */
+    }
 
-th {
-    background-color: #df0000; /* Table header background color */
-    color: white;
-}
+    th, td {
+        padding: 10px; /* Reduce padding in table for mobile */
+    }
 
-tbody tr:hover {
-    background-color: #f1f1f1; /* Hover effect for table rows */
+    .button {
+        width: 100%; /* Make button full width */
+    }
+
+    /* Calendar Styles */
+    .calendar {
+        font-size: 12px; /* Further adjust calendar font size */
+    }
 }
