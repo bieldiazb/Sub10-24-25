@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Athletes</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <h1>All Athletes</h1>
+
+    <div class="add-athlete-form">
+        <input type="text" id="athlete-name" placeholder="Athlete Name" required>
+        <input type="text" id="athlete-sex" placeholder="(M/F)" required>
+        <input type="date" id="athlete-birthdate" placeholder="Birth Date" required>
+        <button id="add-athlete-button">Add Athlete</button>
+    </div>
+
+    <div class="athlete-grid" id="athlete-grid"></div>
+    
+    <div class="btn_gob_ack"><a href="developer.html" style="color:white" style="text-decoration: none">Go back</a></div>
+
+    <!-- Firebase SDKs -->
+    <script type="module" src="all-athletes.js"></script>
+    <!-- Modal for Editing Athlete -->
+    <div id="edit-athlete-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Edit Athlete</h2>
+            <input type="text" id="edit-athlete-name" placeholder="Athlete Name" required>
+            <input type="text" id="edit-athlete-sex" placeholder="Sex" required>
+            <input type="date" id="edit-athlete-birthdate" required>
+            <button id="update-athlete-button">Update Athlete</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -185,11 +185,17 @@ button:hover {
     background-color: #df0000; /* Change background color on hover */
 }
 
-/* Responsive Styles */
+
+/* Responsive Styles */     /*<---------------------------------------------------------------------------------------------------RESPONSIVE STYLES*/
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column; /* Stack navbar items vertically on mobile */
         align-items: center; /* Center align navbar items */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons on mobile */
+        margin: 10px 0; /* Spacing between buttons */
     }
 
     h1 {

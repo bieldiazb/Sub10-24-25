@@ -1,0 +1,202 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    color: #333; /* Changed the body text color for better contrast */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #007bff; /* Added a color for the heading */
+    font-size: 2.5em; /* Increased font size for better visibility */
+}
+
+/* Styles for the athlete grid */
+#athlete-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Individual athlete card styling */
+.athlete-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners for a modern look */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    text-align: center; /* Center text inside athlete card */
+}
+
+/* Hover effect for the athlete card */
+.athlete-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.athlete-card button{
+    background-color: red;
+}
+
+.athlete-card button:hover{
+    background-color: rgb(247, 51, 51);
+}
+
+/* Text inside the athlete card */
+.athlete-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Button styles */
+button {
+    padding: 12px 15px; /* Increased padding for better clickability */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px 0;
+    font-size: 16px; /* Consistent font size across buttons */
+}
+
+/* Add Athlete button */
+#add-athlete-button {
+    background-color: #28a745;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 12px; /* Rounded corners */
+    width: 220px; /* Increased width for a better appearance */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-athlete-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Go Back Button */
+.btn_gob_ack {
+    background-color: #007bdf;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn_gob_ack:hover {
+    background-color: #0056b3; /* Adjusted hover color for consistency */
+}
+
+/* Add Athlete Form Styles */
+.add-athlete-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto; /* Center the form with margin */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-athlete-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.add-athlete-form input:focus {
+    border-color: #007bff; /* Focus state color */
+    outline: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Adjusted heading size for smaller screens */
+    }
+
+    .add-athlete-form {
+        padding: 15px; /* Reduced padding on smaller screens */
+    }
+
+    input[type="text"], input[type="date"] {
+        font-size: 14px; /* Adjust font size for inputs */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #athlete-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .btn_add_athlete, .btn_gob_ack {
+        width: 100%; /* Full-width buttons on mobile */
+        font-size: 18px; /* Increase font size for better accessibility */
+    }
+}
