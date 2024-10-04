@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Events">
+    <meta name="keywords" content="events, sports, management">
+    <meta name="author" content="Biel">
+    <title>All Events</title>
+    <link rel="stylesheet" href="style3.css"> <!-- Include your CSS file -->
+</head>
+<body>
+    <h1 style="text-align: center;">Manage Events</h1>
+    
+    <!-- Form to Add Event -->
+    <div class="add-event-form">
+        <input type="text" id="event-title" placeholder="Event Title" required>
+        <input type="text" id="event-location" placeholder="Event Location" required>
+        <input type="date" id="event-date" placeholder="Event Date" required>
+        <button id="add-event-button">Add Event</button>
+    </div>
+
+    <div class="btn_gob_ack"><a href="developer.html" style="color:white" style="text-decoration: none">Go back</a></div>
+    
+    <!-- Container for the events grid -->
+    <div id="event-grid" class="event-grid">
+        <!-- Event cards will be dynamically added here -->
+    </div>
+    
+    <!-- Modal for editing events -->
+    <div id="edit-event-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Edit Event</h2>
+            <input type="text" id="edit-event-title" placeholder="Event Title">
+            <input type="text" id="edit-event-location" placeholder="Event Location">
+            <input type="date" id="edit-event-date" placeholder="Event Date">
+            <button id="update-event-button">Update Event</button>
+        </div>
+    </div>
+
+    <!-- Include the separate JS file -->
+    <script type="module" src="all-events.js"></script>
+</body>
+</html>

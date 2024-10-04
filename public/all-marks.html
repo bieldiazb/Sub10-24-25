@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Marks">
+    <meta name="keywords" content="marks, sports, management">
+    <meta name="author" content="Biel">
+    <title>All Marks</title>
+    <link rel="stylesheet" href="style4.css"> <!-- Include your CSS file -->
+</head>
+<body>
+    <h1 style="text-align: center;">Manage Marks</h1>
+
+    <!-- Form to Add Mark -->
+    <div class="add-mark-form">
+        <select id="mark-athlete-select">
+            <option value="">Select Athlete</option>
+        </select>
+        <select id="mark-event-select">
+            <option value="">Select Event</option>
+        </select>
+        <input type="text" id="mark-location" placeholder="Location" required>
+        <input type="date" id="mark-date" placeholder="Date" required>
+        <input type="text" id="mark-result" placeholder="Mark (e.g., 7,70 s)" required>
+        <button id="add-mark-button">Add Mark</button>
+    </div>
+
+    <div class="btn_gob_ack"><a href="developer.html" style="color:white" style="text-decoration: none">Go back</a></div>
+
+    <!-- Container for the marks grid -->
+    <div id="mark-grid" class="mark-grid">
+        <!-- Mark cards will be dynamically added here -->
+    </div>
+
+    <!-- Modal for editing marks -->
+    <div id="edit-mark-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Edit Mark</h2>
+            <select id="edit-mark-athlete-select">
+                <option value="">Select Athlete</option>
+            </select>
+            <select id="edit-mark-event-select">
+                <option value="">Select Event</option>
+            </select>
+            <input type="text" id="edit-mark-location" placeholder="Location">
+            <input type="date" id="edit-mark-date" placeholder="Date">
+            <input type="text" id="edit-mark-result" placeholder="Mark (e.g., 7,70 s)">
+            <button id="update-mark-button">Update Mark</button>
+        </div>
+    </div>
+
+    <!-- Include the separate JS file -->
+    <script type="module" src="all-marks.js"></script>
+</body>
+</html>
