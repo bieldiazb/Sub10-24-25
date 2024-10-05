@@ -33,7 +33,7 @@ async function loadEvents() {
         eventDiv.innerHTML = `
             <h2>${eventData.title}</h2>
             <p>Location: ${eventData.lloc}</p>
-            <p>Date: ${eventData.data}</p>
+            <p>Date: ${eventData.date}</p>
             <button onclick="editEvent('${doc.id}')">Edit</button>
             <button onclick="confirmDeleteEvent('${doc.id}')">Delete</button>
         `;
@@ -45,25 +45,42 @@ async function loadEvents() {
 document.getElementById('add-event-button').addEventListener('click', async () => {
     const title = document.getElementById('event-title').value;
     const location = document.getElementById('event-location').value;
-    const date = document.getElementById('event-date').value;
+    const dateValue = document.getElementById('event-date').value;
 
     // Check if all fields are filled
-    if (!title || !location || !date) {
+    if (!title || !location || !dateValue) {
         alert('All fields are required!');
         return;
     }
 
+    // Format the date in dd/mm/yyyy format
+    const formattedDate = formatDate(dateValue);
+
+    // Save the event with the 'date' field in dd/mm/yyyy format
     await addDoc(collection(db, 'events'), {
         title: title,
         lloc: location,
-        data: date
+        date: formattedDate // Use formatted date
     });
+
     loadEvents(); // Reload events after adding
+
     // Clear input fields
     document.getElementById('event-title').value = '';
     document.getElementById('event-location').value = '';
     document.getElementById('event-date').value = '';
 });
+
+// Utility function to format date as dd/mm/yyyy
+function formatDate(dateString) {
+    const date = new Date(dateString); // Convert the input string to a Date object
+    const day = String(date.getDate()).padStart(2, '0'); // Get day and pad with zero if needed
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Get month and pad with zero (January is 0)
+    const year = date.getFullYear(); // Get full year
+
+    return `${day}/${month}/${year}`; // Return formatted date string
+}
+
 
 // Function to confirm event deletion
 window.confirmDeleteEvent = function(id) { // Expose to global scope
