@@ -82,7 +82,7 @@
     <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -105,51 +105,15 @@
 
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Store login time in localStorage
-                    localStorage.setItem('loginTimestamp', Date.now());
-                    // Redirect to developer page
-                    window.location.href = "developer.html";
+                    // Signed in 
+                    window.location.href = "developer.html"; // Redirect to developer page
                 })
                 .catch((error) => {
-                    console.error("Error during login:", error.code, error.message);
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Error during login:", errorCode, errorMessage);
                     alert("Login failed. Please check your credentials.");
                 });
-        });
-
-        // Check session expiration every second
-        setInterval(() => {
-            const loginTimestamp = localStorage.getItem('loginTimestamp');
-            if (loginTimestamp) {
-                const elapsedTime = Date.now() - loginTimestamp;
-                const thirtySeconds = 30 * 1000;
-                
-                if (elapsedTime > thirtySeconds) {
-                    signOut(auth).then(() => {
-                        localStorage.removeItem('loginTimestamp');
-                        alert("Your session has expired. Please log in again.");
-                        window.location.href = "index.html"; // Redirect to login page
-                    }).catch((error) => {
-                        console.error("Error during logout:", error.message);
-                    });
-                }
-            }
-        }, 1000); // Run check every 1 second
-
-        // Sign out any user if still logged in and session has expired
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                const loginTimestamp = localStorage.getItem('loginTimestamp');
-                const elapsedTime = Date.now() - loginTimestamp;
-                const oneHour = 60 * 60 * 1000;
-
-                if (elapsedTime > oneHour) {
-                    signOut(auth).then(() => {
-                        localStorage.removeItem('loginTimestamp');
-                        alert("Your session has expired. Please log in again.");
-                        window.location.href = "index.html";
-                    });
-                }
-            }
         });
     </script>
 </body>
