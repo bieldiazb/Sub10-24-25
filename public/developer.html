@@ -65,21 +65,18 @@
     </style>
 </head>
 <body>
-    <h1>Developer Page <i>v1.3.3</i></h1>
+    <h1>Developer Page <i>v1.3.5</i></h1>
     <div>
         <p>This page is for developer access only.</p>
-
-        <!-- Navigation Links for Developer -->
         <a href="all-athletes.html" class="button">View All Athletes</a>
         <a href="all-events.html" class="button">View All Events</a>
         <a href="all-marks.html" class="button">View All Marks</a>
         <a href="index.html" class="button">Back</a>
     </div>
     
-    <!-- Logout Button -->
-    <button id="logout-button">Logout</button> <!-- Logout button -->
+    <button id="logout-button">Logout</button>
 
-    <!-- Firebase SDKs -->
+    <!-- Firebase SDKs and Auto-Logout Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
@@ -95,25 +92,42 @@
             measurementId: "G-EGHZBHFRHY"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        // Check authentication state
+        // Function to log out the user after 60 seconds of inactivity
+        let logoutTimer;
+
+        function startLogoutTimer() {
+            clearTimeout(logoutTimer); // Reset timer
+            logoutTimer = setTimeout(() => {
+                signOut(auth).then(() => {
+                    alert("You have been logged out due to inactivity.");
+                    window.location.href = "login.html";
+                }).catch((error) => {
+                    console.error("Error signing out:", error);
+                });
+            }, 60000); // 60 seconds
+        }
+
+        // Check auth state and start the timer
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                console.log("User is not logged in, redirecting to login page.");
-                window.location.href = "login.html";
+            if (user) {
+                console.log("User is logged in:", user.email);
+                startLogoutTimer(); // Start auto-logout timer
+
+                // Reset timer on user interaction
+                document.addEventListener('click', startLogoutTimer);
+                document.addEventListener('keydown', startLogoutTimer);
             } else {
-                console.log("User is logged in:", user.email); // Log user email for debugging
+                window.location.href = "login.html";
             }
         });
 
-        // Logout function
+        // Logout button functionality
         document.getElementById('logout-button').addEventListener('click', () => {
             signOut(auth).then(() => {
-                console.log("User signed out.");
-                window.location.href = "login.html"; // Redirect to login page after logging out
+                window.location.href = "login.html";
             }).catch((error) => {
                 console.error("Error signing out:", error);
             });
