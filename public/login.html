@@ -82,7 +82,7 @@
     <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -107,6 +107,7 @@
                 .then((userCredential) => {
                     // Signed in 
                     window.location.href = "developer.html"; // Redirect to developer page
+                    startLogoutTimer(); // Start the 60-second logout timer
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -115,6 +116,19 @@
                     alert("Login failed. Please check your credentials.");
                 });
         });
+
+        // Function to start a 60-second timer for auto-logout
+        function startLogoutTimer() {
+            setTimeout(() => {
+                // Logout the user after 60 seconds
+                signOut(auth).then(() => {
+                    alert("You have been logged out due to inactivity.");
+                    window.location.href = "login.html"; // Redirect to login page
+                }).catch((error) => {
+                    console.error("Error during logout:", error);
+                });
+            }, 60000); // 60 seconds = 60000 milliseconds
+        }
     </script>
 </body>
 </html>
