@@ -65,7 +65,7 @@
     </style>
 </head>
 <body>
-    <h1>Developer Page <i>v1.3.5</i></h1>
+    <h1>Developer Page <i>v1.4</i></h1>
     <div>
         <p>This page is for developer access only.</p>
         <a href="all-athletes.html" class="button">View All Athletes</a>
@@ -80,7 +80,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-
+    
         // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyC09cNolrDC5frhfXep9iiwq8lf-Y4mCYY",
@@ -91,13 +91,13 @@
             appId: "1:281812157491:web:aa4e61897199eeedebcf46",
             measurementId: "G-EGHZBHFRHY"
         };
-
+    
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-
-        // Function to log out the user after 60 seconds of inactivity
+    
+        // Function to log out the user after 1 hour of inactivity
         let logoutTimer;
-
+    
         function startLogoutTimer() {
             clearTimeout(logoutTimer); // Reset timer
             logoutTimer = setTimeout(() => {
@@ -107,15 +107,15 @@
                 }).catch((error) => {
                     console.error("Error signing out:", error);
                 });
-            }, 60000); // 60 seconds
+            }, 3600000); // 1 hour (3600000 ms)
         }
-
+    
         // Check auth state and start the timer
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log("User is logged in:", user.email);
                 startLogoutTimer(); // Start auto-logout timer
-
+    
                 // Reset timer on user interaction
                 document.addEventListener('click', startLogoutTimer);
                 document.addEventListener('keydown', startLogoutTimer);
@@ -123,7 +123,7 @@
                 window.location.href = "login.html";
             }
         });
-
+    
         // Logout button functionality
         document.getElementById('logout-button').addEventListener('click', () => {
             signOut(auth).then(() => {
@@ -133,5 +133,6 @@
             });
         });
     </script>
+    
 </body>
 </html>
