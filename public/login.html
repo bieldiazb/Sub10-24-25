@@ -1,120 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icons/favicon.ico" type="icons/x-icon">
-    <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="icons/site.webmanifest">
-    <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Light background for contrast */
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center items horizontally */
-            justify-content: center; /* Center items vertically */
-            height: 100vh; /* Full viewport height */
-        }
+<div>
+    <header>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="icons/favicon.ico" type="icons/x-icon">
+            <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon">
+            <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+            <link rel="manifest" href="icons/site.webmanifest">
+            <title>Login Page</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f9f9f9; /* Light background for contrast */
+                    margin: 0;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; /* Center items horizontally */
+                    justify-content: center; /* Center items vertically */
+                    height: 100vh; /* Full viewport height */
+                }
 
-        h1 {
-            color: #333; /* Darker text for header */
-        }
+                h1 {
+                    color: #333; /* Darker text for header */
+                }
 
-        p {
-            color: #555; /* Slightly lighter text for paragraph */
-        }
+                p {
+                    color: #555; /* Slightly lighter text for paragraph */
+                }
 
-        input {
-            padding: 10px;
-            margin: 10px 0; /* Space between input fields */
-            width: 300px; /* Fixed width for input fields */
-            border: 1px solid #ccc; /* Border style */
-            border-radius: 5px; /* Rounded corners */
-            font-size: 16px; /* Text size */
-        }
+                input {
+                    padding: 10px;
+                    margin: 10px 0; /* Space between input fields */
+                    width: 300px; /* Fixed width for input fields */
+                    border: 1px solid #ccc; /* Border style */
+                    border-radius: 5px; /* Rounded corners */
+                    font-size: 16px; /* Text size */
+                }
 
-        button {
-            display: inline-block; /* Allows margin and padding */
-            padding: 10px 20px; /* Spacing inside the button */
-            margin: 10px 0; /* Space between buttons */
-            font-size: 16px; /* Text size */
-            color: white; /* Text color */
-            background-color: #007bff; /* Button color */
-            border: none; /* Remove default border */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer on hover */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-        }
+                button {
+                    display: inline-block; /* Allows margin and padding */
+                    padding: 10px 20px; /* Spacing inside the button */
+                    margin: 10px 0; /* Space between buttons */
+                    font-size: 16px; /* Text size */
+                    color: white; /* Text color */
+                    background-color: #007bff; /* Button color */
+                    border: none; /* Remove default border */
+                    border-radius: 5px; /* Rounded corners */
+                    cursor: pointer; /* Pointer on hover */
+                    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+                }
 
-        button:hover {
-            background-color: #0056b3; /* Darker on hover */
-            transform: translateY(-2px); /* Slight lift on hover */
-        }
+                button:hover {
+                    background-color: #0056b3; /* Darker on hover */
+                    transform: translateY(-2px); /* Slight lift on hover */
+                }
 
-        .back-button {
-            background-color: #6c757d; /* Gray color for back button */
-        }
+                .back-button {
+                    background-color: #6c757d; /* Gray color for back button */
+                }
 
-        .back-button:hover {
-            background-color: #5a6268; /* Darker gray on hover */
-        }
-    </style>
-</head>
-<body>
-    <h1>Login Page</h1>
-    <div>
-        <p>Please enter your credentials to access the developer page.</p>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button id="login-button">Login</button>
-        <a href="index.html">
-            <button class="back-button">Back</button>
-        </a>
-    </div>
+                .back-button:hover {
+                    background-color: #5a6268; /* Darker gray on hover */
+                }
+            </style>
+        </head>
+    </header>
+    <main>
+        <h1>Login Page</h1>
+        <section>
+            <p>Please enter your credentials to access the developer page.</p>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="login-button">Login</button>
+            <a href="index.html">
+                <button class="back-button">Back</button>
+            </a>
+        </section>
 
-    <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        <!-- Firebase SDKs -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+            import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyC09cNolrDC5frhfXep9iiwq8lf-Y4mCYY",
-            authDomain: "sub10-ecc96.firebaseapp.com",
-            projectId: "sub10-ecc96",
-            storageBucket: "sub10-ecc96.appspot.com",
-            messagingSenderId: "281812157491",
-            appId: "1:281812157491:web:aa4e61897199eeedebcf46",
-            measurementId: "G-EGHZBHFRHY"
-        };
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyC09cNolrDC5frhfXep9iiwq8lf-Y4mCYY",
+                authDomain: "sub10-ecc96.firebaseapp.com",
+                projectId: "sub10-ecc96",
+                storageBucket: "sub10-ecc96.appspot.com",
+                messagingSenderId: "281812157491",
+                appId: "1:281812157491:web:aa4e61897199eeedebcf46",
+                measurementId: "G-EGHZBHFRHY"
+            };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
 
-        document.getElementById('login-button').addEventListener('click', () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            document.getElementById('login-button').addEventListener('click', () => {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
 
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Signed in 
-                    window.location.href = "developer.html"; // Redirect to developer page
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error("Error during login:", errorCode, errorMessage);
-                    alert("Login failed. Please check your credentials.");
-                });
-        });
-    </script>
-</body>
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        // Signed in 
+                        window.location.href = "developer.html"; // Redirect to developer page
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error("Error during login:", errorCode, errorMessage);
+                        alert("Login failed. Please check your credentials.");
+                    });
+            });
+        </script>
+    </main>
 </html>

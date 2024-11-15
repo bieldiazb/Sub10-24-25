@@ -14,6 +14,11 @@ body {
     min-height: 100vh; /* Ensure body takes full height of the viewport */
     background-color: #f9f9f9;
 }
+div{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
 
 /* Navbar Styles */
 .navbar {
@@ -113,13 +118,14 @@ footer a:hover {
     display: flex;
     justify-content: center;
     gap: 20px; /* Space between the cards */
+    
 }
 
 .card {
     background-color: #df0000; /* Bootstrap primary color */
     border-radius: 8px;
-    width: 250px; /* Set card width to a smaller size */
-    height: 150px; /* Set card height to a smaller size */
+    width: 20dvh; /* Set card width to a smaller size */
+    height: 15dvh; /* Set card height to a smaller size */
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUB 10 24-25</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icons/favicon.ico" type="icons/x-icon">
-    <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="icons/site.webmanifest">
-    
-</head>
-<body>
-    <nav class="navbar">
-        <h1 class="navbar-brand">SUB 10 24-25</h1>
-        <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view-marks.html">Marques</a></li>
-            <li><a href="calendar.html">Calendari</a></li>
-            <li><a href="developer.html">Developer</a></li>
-        </ul>
-    </nav>
-    <section class="info" style="text-align: center; margin: 20px; padding: 20px; background-color: #c2c0c0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-        <h1>Benvinguts</h1><h2>al nostre lloc web!</h2>
-        <p>Aquí podreu veure les marques dels vostres fills i filles i les pròximes competicions. M'esforçaré per mantenir-vos informats sobre esdeveniments i resultats.</p>
-        <p>A més, vull recordar-vos que la informació també es proporcionarà a través de <b>WhatsApp</b> per assegurar que esteu sempre al dia amb les últimes notícies i actualitzacions.</p>
-        <p>No dubteu a consultar el <b>calendari</b> i la secció de <b>marques</b> per estar al corrent de tot el que passa!</p>
-    </section>    
-    <div class="container">
-        <div class="card">
-            <a href="view-marks.html" class="button">Marques</a>
-        </div>
-        <div class="card">
-            <a href="calendar.html" class="button">Calendari</a>
-        </div>
-    </div>
+<div>
+    <header>       
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SUB 10 24-25</title>
+            <link rel="stylesheet" href="styles.css">
+            <link rel="icon" href="icons/favicon.ico" type="icons/x-icon">
+            <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon">
+            <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+            <link rel="manifest" href="icons/site.webmanifest">
+        </head>
+    </header>
+    <main>
+        <nav class="navbar">
+            <h1 class="navbar-brand">SUB 10 24-25</h1>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="view-marks.html">Marques</a></li>
+                <li><a href="calendar.html">Calendari</a></li>
+                <li><a href="developer.html">Developer</a></li>
+            </ul>
+        </nav>
+        <section class="info" style="text-align: center; margin: 20px; padding: 20px; background-color: #c2c0c0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <h1>Benvinguts</h1><h2>al nostre lloc web!</h2>
+            <p>Aquí podreu veure les marques dels vostres fills i filles i les pròximes competicions. M'esforçaré per mantenir-vos informats sobre esdeveniments i resultats.</p>
+            <p>A més, vull recordar-vos que la informació també es proporcionarà a través de <b>WhatsApp</b> per assegurar que esteu sempre al dia amb les últimes notícies i actualitzacions.</p>
+            <p>No dubteu a consultar el <b>calendari</b> i la secció de <b>marques</b> per estar al corrent de tot el que passa!</p>
+        </section>    
+        <section class="container">
+            <section class="card">
+                <a href="view-marks.html" class="button">Marques</a>
+            </section>
+            <section class="card">
+                <a href="calendar.html" class="button">Calendari</a>
+            </section>
+        </section>
 
-    <!-- Load Footer -->
-    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
-    <script type="module" src="view-marks.js"></script>
+        <!-- Load Footer -->
+        <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+        <script type="module" src="view-marks.js"></script>
+    </main>
     <footer>
         <p>&copy; 2024 bd design. All rights reserved.</p>
         <nav>
@@ -52,5 +55,5 @@
             </ul>
         </nav>
     </footer>
-</body>
+</div>
 </html>
