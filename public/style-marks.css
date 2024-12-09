@@ -14,11 +14,7 @@ body {
     min-height: 100vh; /* Ensure body takes full height of the viewport */
     background-color: #f9f9f9;
 }
-div{
-    display: grid;
-    min-height: 100dvh;
-    grid-template-rows: auto 1fr auto;
-}
+
 
 /* Navbar Styles */
 .navbar {
@@ -70,12 +66,9 @@ div{
 
 /* Table Styles */
 table {
-    width: 100dvw;
+    width: 100%;
     border-collapse: collapse;
-    margin-top: 20px; 
-    display: block;
-    overflow-x: auto; /* Permet desplaçament horitzontal només si cal */
-    white-space: nowrap; /* Evita trencaments de línia en les cel·les */
+    margin-top: 20px;
 }
 
 th, td {
@@ -159,8 +152,7 @@ footer a:hover {
 }
 
 .selects {
-    text-align: center;
-    width: 100dvw;
+    width: 90%;
     margin-left: 1rem;
     margin-top: 1rem;
 }
@@ -168,17 +160,15 @@ footer a:hover {
 label {
     margin-right: 10px;
     font-weight: bold;
-    font-size: 2.2dvh;
 }
 
 select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    max-width: 39dvw;
     outline: none;
     padding-right: 0;
-    font-size: 2dvh;
+    font-size: 16px;
     margin-right: 10px; /* Space between the select elements */
 }
 
@@ -188,7 +178,7 @@ button {
     border-radius: 4px;
     background-color: #df0000;
     color: white;
-    font-size: 2dvh;
+    font-size: 16px;
     width: 5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -275,8 +265,10 @@ button:hover {
         margin-left: 2px; /* Minimal space between links */
     }
 
+
+
     th, td {
-        padding: 10px; /* Reduce padding in table for mobile */
+        padding: 7px; /* Reduce padding in table for mobile */
     }
 
     .button {
