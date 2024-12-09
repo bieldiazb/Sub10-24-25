@@ -84,13 +84,16 @@ async function loadMarks(athleteId = "", eventId = "") {
             const event = events.find(e => e.id === mark.IDprova);
             const eventName = event ? event.prova : "Unknown";
 
+            // Format date
+            const formattedDate = mark.data ? formatDate(mark.data) : "N/A";
+
             // Create a new row
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${athleteName}</td>
                 <td>${eventName}</td>
                 <td>${mark.marca}</td>
-                <td>${mark.data}</td>
+                <td>${formattedDate}</td>
                 <td>${mark.lloc}</td>
             `;
             marksTableBody.appendChild(row);
@@ -99,6 +102,7 @@ async function loadMarks(athleteId = "", eventId = "") {
         console.error("Error loading marks:", error);
     }
 }
+
 
 // Filter marks based on selected athlete and event
 document.getElementById("filter-button").addEventListener("click", () => {
