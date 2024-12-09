@@ -83,9 +83,10 @@ async function loadMarks() {
             <p>Location: ${markData.lloc}</p>
             <p>Date: ${markData.data}</p>
             <p>Mark: ${markData.marca}</p>
-            <button onclick="editMark('${doc.id}')">Edit</button>
-            <button onclick="confirmDeleteMark('${doc.id}')">Delete</button>
+            <button class="edit-button" onclick="editMark('${doc.id}')">Edit</button>
+            <button class="delete-button" onclick="confirmDeleteMark('${doc.id}')">Delete</button>
         `;
+
         markGrid.appendChild(markDiv);
     });
 }

@@ -206,3 +206,36 @@ button:hover {
         font-size: 18px;
     }
 }
+
+/* Estil per al botó Edit */
+.edit-button {
+    background-color: #4CAF50; /* Verd */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #45a049; /* Verd més fosc al passar el ratolí */
+}
+
+/* Estil per al botó Delete */
+.delete-button {
+    background-color: #f44336; /* Vermell */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Vermell més fosc al passar el ratolí */
+}
+
