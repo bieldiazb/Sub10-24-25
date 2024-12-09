@@ -70,11 +70,11 @@ div{
 
 /* Table Styles */
 table {
-    width: 100dvw;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px; 
-    display: block;
-    overflow-x: auto; /* Permet desplaçament horitzontal només si cal */
+    /* display: block; */
+    /*overflow-x: auto;  Permet desplaçament horitzontal només si cal */
     white-space: nowrap; /* Evita trencaments de línia en les cel·les */
 }
 
@@ -273,6 +273,15 @@ button:hover {
 
     .navbar-links li {
         margin-left: 2px; /* Minimal space between links */
+    }
+
+    table {
+        width: 100dvw;
+        border-collapse: collapse;
+        margin-top: 20px; 
+        display: block;
+        overflow-x: auto; /* Permet desplaçament horitzontal només si cal */
+        white-space: nowrap; /* Evita trencaments de línia en les cel·les */
     }
 
     th, td {
