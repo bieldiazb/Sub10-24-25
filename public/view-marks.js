@@ -59,6 +59,11 @@ async function loadEvents() {
     }
 }
 
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}/${month}/${year}`;
+}
+
 // Fetch and display marks with optional filters
 async function loadMarks(athleteId = "", eventId = "") {
     const marksTableBody = document.getElementById("marks-table").querySelector("tbody");
