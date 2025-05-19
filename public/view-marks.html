@@ -31,21 +31,32 @@
         </section>
         
         <section class="selects">
-            <!-- Dropdowns for filtering -->
-            <label for="athlete-select">Selecciona atleta:</label>
-            <select id="athlete-select">
-                <option value="">Tots els atletes</option>
-                <!-- Athlete options will be populated here -->
-            </select>
-            <br>
-            <label for="event-select">Selecciona prova:</label>
-            <select id="event-select">
-                <option value="">Totes les proves</option>
-                <!-- Event options will be populated here -->
-            </select>
-
+            <section class="filter-group">
+                <label for="athlete-select">Selecciona atleta:</label>
+                <select id="athlete-select">
+                    <option value="">Tots els atletes</option>
+                </select>
+            </section>
+        
+            <section class="filter-group">
+                <label for="event-select">Selecciona prova:</label>
+                <select id="event-select">
+                    <option value="">Totes les proves</option>
+                </select>
+            </section>
+        
+            <section class="filter-group">
+                <label for="sex-select">Selecciona sexe:</label>
+                <select id="sex-select">
+                    <option value="">Tots</option>
+                    <option value="M">Masculí</option>
+                    <option value="F">Femení</option>
+                </select>
+            </section>
+        
             <button id="filter-button">Filtrar</button>
         </section>
+        
 
         <table id="marks-table">
             <thead>
@@ -57,15 +68,13 @@
                     <th>Lloc</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Data will be populated here -->
-            </tbody>
+            <tbody></tbody>
         </table>
 
         <!-- Firebase and App Scripts -->
         <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
-        <script type="module" src="view-marks.js"></script> <!-- Your custom module -->
+        <script type="module" src="view-marks.js"></script>
     </main>
     <footer>
         <p>&copy; 2024 bd design. All rights reserved.</p>

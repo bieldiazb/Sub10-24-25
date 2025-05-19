@@ -159,11 +159,20 @@ footer a:hover {
 }
 
 .selects {
-    text-align: center;
-    width: 100dvw;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: center; 
+    margin-bottom: 1.5rem;
 }
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+}
+
 
 label {
     margin-right: 10px;
